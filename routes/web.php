@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/crawler', [QuoteController::class, 'crawler']);
+Route::get('/dataframe', [QuoteController::class, 'scrapeAndCreateDataFrame']);
